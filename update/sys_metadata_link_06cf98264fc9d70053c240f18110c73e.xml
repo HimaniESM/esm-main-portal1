@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>b54cd7376fb89300d69dc8c17c3ee4c2</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_infte_esm_servic_esm_main_portal_persona_table">
+    <x_infte_esm_servic_esm_main_portal_persona_table action="INSERT_OR_UPDATE">
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 12:52:35</sys_created_on>
+        <sys_id>b54cd7376fb89300d69dc8c17c3ee4c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 12:52:35</sys_updated_on>
+        <u_color>rgba(73, 39, 74, 0.8)</u_color>
+        <u_description>Do you use the system to report issues &amp; requests, read knowledge articles, manage your Assets, Reports</u_description>
+        <u_logo>glyphicon-globe</u_logo>
+        <u_name>Business User</u_name>
+        <u_persona_code>bu</u_persona_code>
+    </x_infte_esm_servic_esm_main_portal_persona_table>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-27 12:11:27</sys_created_on>
+        <sys_id>06cf98264fc9d70053c240f18110c73e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_metadata_link_06cf98264fc9d70053c240f18110c73e</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-27 12:11:27</sys_updated_on>
+        <tablename>x_infte_esm_servic_esm_main_portal_perso</tablename>
+    </sys_metadata_link>
+</record_update>

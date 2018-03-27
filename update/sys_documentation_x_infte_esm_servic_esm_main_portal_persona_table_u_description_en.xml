@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="u_description" label="Persona Description" language="en" table="x_infte_esm_servic_esm_main_portal_persona_table">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_description</element>
+            <help/>
+            <hint/>
+            <label>Persona Description</label>
+            <language>en</language>
+            <name>x_infte_esm_servic_esm_main_portal_persona_table</name>
+            <plural>Persona Descriptions</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Divya_M</sys_created_by>
+            <sys_created_on>2018-03-19 08:30:03</sys_created_on>
+            <sys_id>7060e6f76ff49300d69dc8c17c3ee4de</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Persona Description</sys_name>
+            <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+            <sys_update_name>sys_documentation_x_infte_esm_servic_esm_main_portal_persona_table_u_description_en</sys_update_name>
+            <sys_updated_by>Divya_M</sys_updated_by>
+            <sys_updated_on>2018-03-19 08:30:03</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>6ab3070a4f8d970053c240f18110c7c2</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="x_infte_esm_servic_esm_guided_tour">
+    <x_infte_esm_servic_esm_guided_tour action="INSERT_OR_UPDATE">
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-26 10:52:48</sys_created_on>
+        <sys_id>6ab3070a4f8d970053c240f18110c7c2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-26 10:52:48</sys_updated_on>
+        <u_content>test case</u_content>
+        <u_order>1</u_order>
+        <u_placement>top</u_placement>
+        <u_target>esm-top-news</u_target>
+        <u_title>Top News</u_title>
+    </x_infte_esm_servic_esm_guided_tour>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-27 12:01:16</sys_created_on>
+        <sys_id>387ddca24fc9d70053c240f18110c7d6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Created 2018-03-26 03:52:48</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_metadata_link_387ddca24fc9d70053c240f18110c7d6</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-27 12:01:16</sys_updated_on>
+        <tablename>x_infte_esm_servic_esm_guided_tour</tablename>
+    </sys_metadata_link>
+</record_update>

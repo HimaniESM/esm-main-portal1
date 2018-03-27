@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$window,$filter, $location) {
+  /* widget controller */
+  var c = this;
+	
+	document.getElementById('reqTile').style.backgroundColor = c.data.personaColor;
+	
+	/******************** FEEDBACK ********************/
+	
+	 $scope.$on('feedback', function (event, args) {
+		
+		if(c.data.incNumber && c.data.feedbackNotGiven){
+    $('#memberModal').modal('show');
+		 }
+		 
+		 if(!c.data.feedbackNotGiven || c.data.incNumber==undefined){
+			
+    $('#memberModal2').modal('show');
+		 }
+ });
+	
+	/*$(document).ready(function () {
+
+});*/
+	
+	$scope.successModal = function(){
+	
+	$('#memberModal').modal('hide');
+	$('#memberModal1').modal('show');	
+		
+	}
+	
+	$scope.getComments = function(comment){
+		
+		c.data.comments = comment;
+		var x = document.getElementsByClassName('comp');
+		for(var i=0;i<x.length;i++){
+			x[i].style.background = "#ffffff";
+		}
+		document.getElementById(comment).style.background = '#e6e5e3';
+		
+	}
+	
+	$scope.getFeedback = function(feedback){
+		c.data.feedback = feedback;
+		var x = document.getElementsByClassName('comp');
+		for(var i=0;i<x.length;i++){
+			x[i].style.background = "#ffffff";
+			document.getElementById(feedback).style.background = '#e6e5e3';
+		}
+	}
+	
+	$scope.portalFeedback = function(opinion){
+		c.data.portal = opinion;
+		c.data.portalFeedback = true;
+		var aData={};
+		aData.portal=opinion;
+			c.server.get({wparm3:aData}).then(function(r){ 
+			
+			});
+	}
+	/******************** FEEDBACK ENDS ***************/
+	
+		//$scope.background=$scope.user.u_background_main;
+	 
+	//$scope.persona=$scope.user.u_persona;
+	
+	c.options.title = c.options.title || c.data.searchMsg;
+  $scope.openChat=function(){
+		
+		$window.open('/$chat_support.do?queueID=4bc7a3f3c31331001c845cb981d3ae44', 'window', 'location=no,toolbar=no,menubar=yes,scrollbars=no,width=400,height=360');
+		
+	} 
+	
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=400, height=400,top=250, left=800"); 
+	};
+	
+	c.onSelect = function($item, $model, $label) {
+		if ($item.type == "sc")
+			$location.search({id: 'sc_cat_item', sys_id: $item.sys_id});
+		if ($item.type == "sc_content") {
+			if ($item.content_type == "kb")
+				$location.search({id: 'kb_article', sys_id: $item.kb_article});
+			else if ($item.content_type == "external")
+				window.open($item.url, '_blank');
+			else
+				$location.search({id: 'sc_cat_item', sys_id: $item.sys_id});
+		}
+		if ($item.type == "sc_guide")
+			$location.search({id: 'sc_cat_item_guide', sys_id: $item.sys_id});
+		if ($item.type == "kb")
+			$location.search({id: 'kb_article', sys_id: $item.sys_id});
+		if ($item.type == "qa")
+			$location.search({id: 'kb_social_qa_question', question_id: $item.sys_id});
+		if ($item.type == "rec")
+			$location.search({id: $item.page, sys_id: $item.sys_id, table: $item.table});
+	};
+
+	c.getResults = function(query) {
+		return c.server.get({q: query}).then(function(response) {
+			var a = $filter('orderBy')(response.data.results, '-score');
+			return $filter('limitTo')(a, c.data.limit);
+		});
+	}
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.mainPage .container{&#13;
+  margin-top : -15px;&#13;
+}&#13;
+.row {&#13;
+    margin-right: 35px;&#13;
+    margin-left: 35px;&#13;
+  margin-top : -5px;&#13;
+}&#13;
+&#13;
+.home-content {&#13;
+    color: #2877ba;&#13;
+}&#13;
+&#13;
+body {&#13;
+    font-family: calibri;&#13;
+    font-size: 14px;&#13;
+    line-height: 1.42857143;&#13;
+    //color: #333;&#13;
+    //background-color: #fff;&#13;
+}&#13;
+&#13;
+@media (min-width: 992px)&#13;
+.col-md-3 {&#13;
+    width: 25%;&#13;
+}&#13;
+&#13;
+.home-content .column-home .column-heading {&#13;
+    display: block;&#13;
+   // height: 200px;&#13;
+    //margin-top: 126px;&#13;
+    margin-top: 30px;&#13;
+    padding-top: 1.429em;&#13;
+    position: relative;&#13;
+    text-decoration: none;&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+.home-content .column-home .column-heading &gt; * {&#13;
+    color: #fff;&#13;
+}&#13;
+&#13;
+img {&#13;
+    vertical-align: middle;&#13;
+  border: 0;&#13;
+}&#13;
+&#13;
+img{&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+   // border: 0;&#13;
+}&#13;
+&#13;
+h4, .h4 {&#13;
+    font-size: 20px;&#13;
+  font-family : calibri;&#13;
+}&#13;
+&#13;
+&#13;
+.home-content .column-home .column-content ul {&#13;
+    list-style-type: none;&#13;
+    margin: 0;&#13;
+    padding: 0;&#13;
+}&#13;
+&#13;
+/************ Announcements Marquee******/&#13;
+.home-content .column-home .column-content{&#13;
+  overflow: hidden;&#13;
+  &#13;
+}&#13;
+.marquee {&#13;
+    height : 200px;&#13;
+    overflow : hidden;&#13;
+    position: relative;&#13;
+    box-sizing: border-box;&#13;
+    animation: marquee 15s linear infinite;&#13;
+}&#13;
+.marquee:hover {&#13;
+    animation-play-state: paused;&#13;
+}&#13;
+&#13;
+@keyframes marquee {&#13;
+    0%   { top:   15em }&#13;
+    100% { top: -11em }&#13;
+}&#13;
+&#13;
+ul, menu, dir {&#13;
+    display: block;&#13;
+    list-style-type: disc;&#13;
+    -webkit-margin-before: 1em;&#13;
+    -webkit-margin-after: 1em;&#13;
+    -webkit-margin-start: 0px;&#13;
+    -webkit-margin-end: 0px;&#13;
+    -webkit-padding-start: 40px;&#13;
+}&#13;
+&#13;
+.home-content .column-home .column-content ul li {&#13;
+    line-height: 1.2;&#13;
+    margin-bottom: 1em;&#13;
+}&#13;
+&#13;
+/*******************  Announcements Marquee End **************/&#13;
+&#13;
+.request{&#13;
+  overflow-y : auto;&#13;
+}&#13;
+&#13;
+/************************ Second Search *******************/&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+/******************* SECOND SEARCH END *********************/&#13;
+.mainPage{&#13;
+  	padding-left: 2.5%;&#13;
+    padding-right: 2.5%;&#13;
+  	//background-image: url(testbg.png); &#13;
+  	//background-size:100% 100%; &#13;
+  	//background-repeat:no-repeat;&#13;
+}&#13;
+&#13;
+ &#13;
+&#13;
+&#13;
+.icon{&#13;
+  border-radius: 15px;&#13;
+}&#13;
+&#13;
+.whole-tile{&#13;
+  //box-shadow: 0 0 11px gray;&#13;
+  &#13;
+  border-radius : 5px;&#13;
+}&#13;
+&#13;
+.inside-tile{&#13;
+  //margin-top: 15px;&#13;
+  //background: #753f84;&#13;
+}&#13;
+&#13;
+#linktest {&#13;
+      background-color: #632d2d;//#632d2d;&#13;
+    //background: -webkit-linear-gradient(top, #314755 , #26a0da);&#13;
+   // background: linear-gradient(to left, #02c8a7 , #84e8d7);&#13;
+  		border-top-left-radius: 10px;&#13;
+    	border-top-right-radius: 10px;&#13;
+    	//box-shadow: 0 0 3px #fff;&#13;
+}&#13;
+&#13;
+.column-home{&#13;
+  padding-left : 20px;&#13;
+  padding-right : 20px;&#13;
+}&#13;
+/***************************** Persona **********/&#13;
+.column-content {&#13;
+    background-color: rgba(0,0,0,0.6);&#13;
+  	 &#13;
+    height: 240px;&#13;
+    padding: 20px 20px 0 25px;&#13;
+    border-bottom-right-radius: 5px;&#13;
+    border-bottom-left-radius: 5px;&#13;
+    //box-shadow: 0 0 3px gray;&#13;
+  	//border : 1px solid gray;&#13;
+}&#13;
+.column-heading{&#13;
+  //background-color: #632d2d;&#13;
+ border-top-left-radius: 5px;&#13;
+  border-top-right-radius: 5px;&#13;
+}&#13;
+&#13;
+a{&#13;
+     color : rgb(255,255,255);//color: #337ab7;&#13;
+   font-family : calibri;&#13;
+  font-size : 16px;&#13;
+  //font-weight : 600;&#13;
+   // text-decoration: none;&#13;
+}&#13;
+&#13;
+ &#13;
+&#13;
+&#13;
+ ::-webkit-input-placeholder { /* Chrome/Opera/Safari */&#13;
+  color: #fff;&#13;
+}&#13;
+  ::-moz-placeholder { /* Firefox 19+ */&#13;
+  color: #fff;&#13;
+}&#13;
+  :-ms-input-placeholder { /* IE 10+ */&#13;
+  color: #fff;&#13;
+}&#13;
+  :-moz-placeholder { /* Firefox 18- */&#13;
+  color: #fff;&#13;
+}&#13;
+&#13;
+&#13;
+&#13;
+//***************************** FEEDBACK **************/////&#13;
+&#13;
+.modal {&#13;
+  position:fixed;&#13;
+  top:auto;&#13;
+  right:50px;&#13;
+  left:auto;&#13;
+  bottom:0;&#13;
+}&#13;
+&#13;
+.modal-dialog{ &#13;
+  width : 350px;&#13;
+}&#13;
+&#13;
+.modal-content{&#13;
+   border : 3px solid #e98300;&#13;
+}&#13;
+&#13;
+.modal-header{&#13;
+    background-color: #ffa22c;&#13;
+    color: #ffffff;&#13;
+}&#13;
+&#13;
+.modal-header button{&#13;
+  width : 30px;&#13;
+  height : 30px;&#13;
+  background : #ffffff;&#13;
+  border-radius : 40px;&#13;
+  opacity : 0.5;&#13;
+}&#13;
+&#13;
+#memberModal1 button{&#13;
+  width : 30px;&#13;
+  height : 30px;&#13;
+  background : #e98300;&#13;
+  border-radius : 40px;&#13;
+  opacity : 1;&#13;
+}&#13;
+&#13;
+#memberModal1 p{&#13;
+  text-align : center;&#13;
+}&#13;
+&#13;
+#memberModal1 i{&#13;
+  font-size : 28px;&#13;
+  color : #e98300;&#13;
+}&#13;
+&#13;
+#memberModal1 i:hover{&#13;
+  cursor : pointer;&#13;
+  border: 1px solid;&#13;
+  background-color: #e98300;&#13;
+  border-radius: 10px;&#13;
+  color : #ffffff;&#13;
+}&#13;
+&#13;
+#memberModal2 button{&#13;
+  width : 30px;&#13;
+  height : 30px;&#13;
+  background : #e98300;&#13;
+  border-radius : 40px;&#13;
+  opacity : 1;&#13;
+}&#13;
+&#13;
+&#13;
+.modal-header span{&#13;
+	color : #e98300;&#13;
+}&#13;
+&#13;
+#memberModal1 span{&#13;
+	color : #ffffff;&#13;
+}&#13;
+&#13;
+#memberModal2 span{&#13;
+	color : #ffffff;&#13;
+}&#13;
+&#13;
+.modal textarea{&#13;
+  border: 1px solid #e98300;&#13;
+}&#13;
+&#13;
+.modal .btn-warning{&#13;
+    color: #fff;&#13;
+    background-color: #ec971f;&#13;
+    border-color: #d58512;&#13;
+}&#13;
+&#13;
+.compliment{&#13;
+  margin : 0px;&#13;
+ }&#13;
+&#13;
+.comp{&#13;
+  display : inline;&#13;
+  padding : 0px;&#13;
+  text-align : center;&#13;
+  border-radius : 10px;&#13;
+}&#13;
+&#13;
+.comp:focus{&#13;
+  background-color: #ec971f;&#13;
+}&#13;
+.comp img{&#13;
+  border-radius : 5px;&#13;
+  display : block;&#13;
+  margin : auto;&#13;
+  height: 30px;&#13;
+  width: 30px;&#13;
+}&#13;
+&#13;
+.comp a{&#13;
+  color : #2877ba;&#13;
+  font-size : 12px;&#13;
+  font-family: inherit;&#13;
+}&#13;
+&#13;
+.comp a:hover{&#13;
+  color:#c55d1f;&#13;
+}&#13;
+&#13;
+.comp a:focus {&#13;
+    color:#c55d1f;&#13;
+}&#13;
+&#13;
+.feedback{&#13;
+  margin-left : -5px;&#13;
+  margin-right : -15px;&#13;
+}&#13;
+&#13;
+.diffuse-light{&#13;
+  //color : #e98300;&#13;
+}&#13;
+&#13;
+////*************************** FEEDBACK END ***************//&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+&#13;
+/*.diffuse-light {&#13;
+  -webkit-box-sizing: content-box;&#13;
+  -moz-box-sizing: content-box;&#13;
+  box-sizing: content-box;&#13;
+  border: none;&#13;
+  font: normal 15px/normal "Arizonia", Helvetica, sans-serif;&#13;
+  color: rgba(45,105,209,1);&#13;
+  text-align: center;&#13;
+  -o-text-overflow: clip;&#13;
+  text-overflow: clip;&#13;
+  text-shadow: 0 15px 29px rgba(0,0,0,0.0980392) , 10px 20px 5px rgba(0,0,0,0.0470588) , -10px 20px 5px rgba(0,0,0,0.0470588) ;&#13;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;&#13;
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;&#13;
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;&#13;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;&#13;
+}&#13;
+&#13;
+.diffuse-light:hover {&#13;
+  text-shadow: 0 -15px 29px rgba(102,178,255,0.0980392) , 10px -20px 5px rgba(102,178,255,0.0980392), -10px -20px 5px rgba(102,178,255,0.0980392) ;&#13;
+}*/</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>esm-request-services-widget</id>
+        <internal>false</internal>
+        <link/>
+        <name>ESM Request Services Widget</name>
+        <option_schema>[{"hint":"Request for Services and Access","name":"title3","section":"Presentation","default_value":"Request for Services and Access","label":"\"Request for Services and Access\" Replacement Text","type":"string"},{"hint":"Enter Image name , example-  image1.jpg","name":"icon3","section":"Presentation","default_value":"orderthings2.png","label":"Icon for Request for Services and Access","type":"string"},{"displayValue":"Category","hint":"Select the Service Catalog- categories to be displayed in the widget","name":"categories","display_value_list":[],"section":"Data","label":"Categories","type":"glide_list","value":"sc_category","ed":{"reference":"sc_category"}}]</option_schema>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+	$sp.log(options.title)
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	//data.pageid=$sp.getParameter('id');
+	
+	data.categoryArray = [];
+	var grCategories = new GlideRecord('sc_category');
+	var query = 'sys_idIN'+ options.categories;
+	grCategories.addEncodedQuery(query);
+	grCategories.orderBy('title');
+	grCategories.query();
+	
+	while(grCategories.next()){
+	catObj = {};
+	catObj.title = grCategories.getValue('title');
+	catObj.desc = grCategories.getValue('description');
+	catObj.link = '?id=esm_sc_category&sys_id=' + grCategories.sys_id;
+	catObj.img = grCategories.getDisplayValue('homepage_image');
+	data.categoryArray.push(catObj);
+	}
+	
+	/*************** Feedback ***************/
+	data.submitMsg = gs.getMessage("Submit");
+	data.user = gs.getUserID();
+	data.count = 0;
+	data.feedbackNotGiven = true;
+	//data.disabled = false;
+	
+	var inc = new GlideRecord('incident');
+	inc.addQuery('caller_id',data.user);
+	inc.addQuery('state',7);
+	inc.orderByDesc('sys_updated_on');
+	inc.query();
+	
+	while(inc.next() && data.count<1){
+		data.incNumber = inc.getDisplayValue('number');
+		data.incID = inc.getValue('sys_id');
+		data.count=data.count+1;
+		
+		var feed = new GlideRecord('u_incident_feedback');
+	  feed.addQuery('u_incident',data.incID);
+	  feed.query();
+		
+		while(feed.next() && data.count<=1){
+			data.feedbackNotGiven = false;
+		}
+	}
+	
+
+ if(input){
+	 data.response = gs.getMessage('Thank you for your feedback');
+   data.comments = "";
+	 data.rating = "";
+	 data.rating1 = "";
+	 data.rating2 = "";
+	 data.feedback = "";
+   data.disabled = true;
+	 data.feedbackNotGiven = false;
+	 
+	 var incRating = new GlideRecord('u_incident_feedback');
+	 incRating.u_user = data.user;
+	 incRating.u_incident = data.incID;
+	 incRating.u_service_rating = input.rating;
+	 incRating.u_technical_rating = input.rating1;
+	 incRating.u_portal_rating = input.rating2;
+	 incRating.u_comments = input.comments;
+	 incRating.u_feedback = input.feedback;
+	 if(!(incRating.u_service_rating=="" && incRating.u_technical_rating=="" && incRating.u_portal_rating=="")){
+	 incRating.insert();
+	 }
+ }
+	
+	if(input && input.wparm3!=undefined){
+		console.log("input.wparm3");
+		console.log(input.wparm3+"input.wparm3");
+		data.portal = "";
+		var portalRating = new GlideRecord('u_self_service_portal_feedback');
+		portalRating.u_recommend = input.wparm3.portal;
+	  portalRating.u_user = data.user;
+		if(portalRating.u_recommend!=""){
+	  portalRating.insert();
+		}
+    
+	}
+		
+	/*************** Feedback ends ****************/
+	
+		/*************** Persona *****************/
+	var user = new GlideRecord('sys_user');
+	user.addQuery('sys_id',data.user);
+	user.query();
+	
+	while(user.next()){
+		var personaCode = user.getDisplayValue('u_persona');
+		data.personaColor = '';
+				
+		if(personaCode){
+			var persona = new GlideRecord('x_infte_esm_servic_esm_main_portal_persona_table');
+			persona.addQuery('u_persona_code',personaCode);
+			persona.query();
+			
+			while(persona.next()){
+				data.personaColor = persona.getDisplayValue('u_color');
+			}
+		}
+		else{
+			data.personaColor = '#632d2d';
+		}
+	}
+	
+	/************ End of Persona *************/
+	
+data.connect_support_queue_id = '4bc7a3f3c31331001c845cb981d3ae44';
+data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
+	
+	data.topNews = [];
+	data.topArticles = [];
+	
+	var top = new GlideRecord('kb_knowledge');
+	top.addEncodedQuery('kb_category=08ca8978dbd83200cc727fcfbf96192d^workflow_state=published');
+	top.orderByDesc('published');
+	top.addActiveQuery();
+	top.query();
+	
+	while(top.next()){
+		
+		newsObject = {};
+		
+		newsObject.shortDesc = top.getDisplayValue("short_description");
+		newsObject.id = top.getValue("sys_id");
+		
+		data.topNews.push(newsObject);
+	}
+	
+	/*var topArt = new GlideRecord('kb_knowledge');
+	topArt.addQuery('rating','2');
+	topArt.orderByDesc('published');
+	topArt.addActiveQuery();
+	topArt.query();
+	
+	while(topArt.next()){
+		
+		articleObject = {};
+		
+		articleObject.shortDesc = topArt.getDisplayValue("short_description");
+		articleObject.rating = topArt.getDisplayValue("rating");
+		articleObject.id = topArt.getValue("sys_id");
+		
+		data.topArticles.push(articleObject);
+	}*/
+	data.articles = [];
+	var z = new GlideRecord('kb_knowledge');
+	z.addQuery("rating", ">", "0");
+	//if (options.kb_category)
+		//z.addQuery("kb_category", options.kb_category);
+	z.orderByDesc('rating');
+	z.orderByDesc('sys_created_on');
+	z.setLimit(options.max_number || 3);
+	z.query();
+	while (z.next()) {
+		//if (!z.canRead())
+		//	continue;
+
+		var a = {};
+		$sp.getRecordValues(a, z, 'short_description,sys_view_count,sys_id,published,rating');
+		a.published_display = z.getDisplayValue("published");
+		data.articles.push(a);
+	}
+	
+	/*  ************** SEARCH *****************/
+	data.searchType = $sp.getParameter("t");
+	data.results = [];
+    data.searchMsg = gs.getMessage("How can we help you today");
+	
+	data.limit = options.limit || 15;
+	var textQuery = '123TEXTQUERY321';
+
+	if (!input)
+		return;
+
+	data.q = input.q;
+	getKnowledge();
+	if (gs.isLoggedIn())
+		getCatalogItems();
+	data.sqandaEnabled = gs.getProperty('glide.sp.socialqa.enabled', false) === 'false';
+	if (data.sqandaEnabled)
+		getQuestions();
+
+	// add in additional search tables from sp_search_groups
+	var portalGR = $sp.getPortalRecord();
+	var portalID = portalGR.getDisplayValue('sys_id');
+	var sg = GlideRecord('sp_search_group');
+	sg.addQuery('sp_portal',portalID);
+	sg.addQuery('active',true);
+	sg.orderBy('order');
+	sg.query();
+	while (sg.next())
+		addSearchTable(sg);
+
+	// typeahead search generates multiple "Your text query contained only
+	// common words..." msgs, we don't want them
+	gs.flushMessages();
+
+	function addSearchTable(sg) {
+		var table = sg.getValue('name');
+		var condition = sg.getValue('condition');
+		var gr = GlideRecord(table);
+		if (condition)
+			gr.addEncodedQuery(condition);
+
+		gr.addQuery(textQuery, data.q);
+		gr.query();
+		var searchTableCount = 0;
+		while (gr.next() && searchTableCount < data.limit) {
+			var rec = {};
+			rec.type = "rec";
+			rec.table = table;
+			rec.sys_id = gr.getDisplayValue('sys_id');
+			rec.page = sg.getDisplayValue('sp_page');
+			if (!rec.page)
+				rec.page = "form";
+			rec.label = gr.getDisplayValue();
+			rec.score = parseInt(gr.ir_query_score.getDisplayValue());
+			data.results.push(rec);
+			searchTableCount++;
+		}
+	}
+
+	function getKnowledge() {
+		var kb = new GlideRecord('kb_knowledge');
+		kb.addQuery('workflow_state', 'published');
+		kb.addQuery('valid_to', '>=', (new GlideDate()).getLocalDate().getValue());
+		kb.addQuery(textQuery, data.q);
+		kb.addQuery('kb_knowledge_base', $sp.getValue('kb_knowledge_base'));
+		kb.query();
+		var kbCount = 0;
+		while (kb.next() && kbCount < data.limit) {
+			if (!$sp.canReadRecord(kb))
+				continue;
+
+			var article = {};
+			article.type = "kb";
+			$sp.getRecordDisplayValues(article, kb, 'sys_id,number,short_description,published,text');
+			if (!article.text)
+				article.text = "";
+			article.text = $sp.stripHTML(article.text);
+			article.text = article.text.substring(0,200);
+			article.score = parseInt(kb.ir_query_score.getDisplayValue());
+			article.label = article.short_description;
+			data.results.push(article);
+			kbCount++;
+		}
+	}
+
+	
+	
+}
+
+)();
+ ]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 06:48:05</sys_created_on>
+        <sys_id>9ac886bb6fb49300d69dc8c17c3ee488</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>ESM Request Services Widget</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_widget_9ac886bb6fb49300d69dc8c17c3ee488</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-26 10:53:47</sys_updated_on>
+        <template><![CDATA[ 
+<div class=" home-content" id="esm-service-request">
+   
+   <div class=" column-home ">
+      <div class="whole-tile">
+         <a style="height:160px;" id="reqTile" href="?id=esm_service_catalog" class="column-heading text-center mob_esm" target="">
+            <div class="inside-tile">
+               <img width="60" class="hide_esm" src={{::options.icon3}} height="60">
+               <h4 class="heading-title">{{::options.title3}}</h4>
+               <p></p>
+            </div>
+         </a>
+         <div class="column-content request">
+            <ul>
+               <li ng-repeat='cat in data.categoryArray'> <a ng-href={{cat.link}} ng-attr-id={{persona}}>  	 
+       
+          {{cat.title}}      
+         
+           
+     
+   </a>
+               </li>
+              
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>
+
+ ]]></template>
+    </sp_widget>
+</record_update>

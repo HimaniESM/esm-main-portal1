@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="ESM Guided Tour" max_length="40" name="x_infte_esm_servic_esm_guided_tour" type="collection">
+        <element label="Content" mandatory="true" max_length="500" name="u_content" type="string"/>
+        <element label="Order" mandatory="true" max_length="50" name="u_order" type="integer"/>
+        <element label="Placement" mandatory="true" max_length="40" name="u_placement" type="string"/>
+        <element label="Target" mandatory="true" max_length="50" name="u_target" type="string"/>
+        <element label="Title" mandatory="true" max_length="40" name="u_title" type="string"/>
+    </element>
+</database>

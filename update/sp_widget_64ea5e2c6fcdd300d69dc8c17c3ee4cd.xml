@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.tile:hover&#13;
+{&#13;
+    box-shadow: 0px 0px 10px #5c6369;&#13;
+   &#13;
+    z-index: 1;&#13;
+    -webkit-transition: all 200ms ease-in;&#13;
+    -webkit-transform: scale(1.1);&#13;
+    -ms-transition: all 200ms ease-in;&#13;
+    -ms-transform: scale(1.1);   &#13;
+    -moz-transition: all 200ms ease-in;&#13;
+    -moz-transform: scale(1.1);&#13;
+    transition: all 200ms ease-in;&#13;
+    transform: scale(1.04);&#13;
+    cursor : pointer;&#13;
+}&#13;
+&#13;
+.part1{&#13;
+   padding-left:10px;&#13;
+  padding-right:10px;&#13;
+  padding-bottom : 10px;&#13;
+  padding-top : 10px;&#13;
+  //height : auto;&#13;
+  height : 250px;&#13;
+  //position : fixed;&#13;
+ // margin-left:-10px;&#13;
+  //margin-right:-10px;&#13;
+  //text-align : center;&#13;
+&#13;
+  &#13;
+  &#13;
+  //background-color : transparent;&#13;
+}&#13;
+&#13;
+span{&#13;
+  //color : #48888c;&#13;
+  color : #e8e8e8;&#13;
+   font-size: 15pt; &#13;
+  font-family: calibri;&#13;
+  //height : 80px;&#13;
+  //padding-left : 30px;&#13;
+}&#13;
+&#13;
+.one a{&#13;
+  color : #e8e8e8;&#13;
+   font-size: 15pt; &#13;
+  font-family: calibri;&#13;
+}&#13;
+.desc{&#13;
+  font-size: 13pt; &#13;
+  font-family: Myriad Pro;&#13;
+}&#13;
+&#13;
+&#13;
+.row{&#13;
+  margin-top: 40px;&#13;
+   margin-right: 50px;&#13;
+    margin-left: 50px;&#13;
+  padding-left : 40px;&#13;
+  padding-right : 40px;&#13;
+}&#13;
+&#13;
+img{&#13;
+  height : 70px;&#13;
+  width : 70px;&#13;
+}&#13;
+&#13;
+ul li ul {&#13;
+  display: none;&#13;
+}&#13;
+&#13;
+li{&#13;
+  color : #1f1c1c;&#13;
+   font-size: 15pt; &#13;
+  font-family:calibri;&#13;
+}&#13;
+&#13;
+ul{&#13;
+  text-decoration : none;&#13;
+}&#13;
+&#13;
+a{&#13;
+ 		color : #e8e8e8;&#13;
+   font-size: 12pt; &#13;
+  font-family: calibri;&#13;
+  &#13;
+}&#13;
+#category a{&#13;
+  color : #fff;&#13;
+  font-family : calibri;&#13;
+  font-weight : bold;&#13;
+  font-size : 15px;&#13;
+}&#13;
+.item{&#13;
+  //padding-left : 20%;&#13;
+}&#13;
+.catalog{&#13;
+  padding-left : 18%;&#13;
+}&#13;
+&#13;
+/*************** Persona **************/&#13;
+&#13;
+.tile{&#13;
+  &#13;
+    border-radius : 5px;&#13;
+   background-color :rgba(219, 81, 2,0.8);// #bfd732;&#13;
+  //opacity : 0.8;&#13;
+ 		transition : 0.5s;&#13;
+  	transition-timing-function: ease-out;&#13;
+  &#13;
+}&#13;
+&#13;
+.tile#ts{&#13;
+  &#13;
+    border-radius : 5px;&#13;
+   background: rgba(6, 47, 79,0.8);&#13;
+  //opacity : 0.8;&#13;
+ 		transition : 0.5s;&#13;
+  	transition-timing-function: ease-out;&#13;
+  &#13;
+}&#13;
+&#13;
+.tile#bu{&#13;
+  &#13;
+    border-radius : 5px;&#13;
+   background:  rgba(28, 73, 48,0.9);&#13;
+  //opacity : 0.8;&#13;
+ 		transition : 0.5s;&#13;
+  	transition-timing-function: ease-out;&#13;
+  &#13;
+}&#13;
+&#13;
+.tile#ex{&#13;
+  &#13;
+    border-radius : 5px;&#13;
+   background: rgba(219, 81, 2,0.8);&#13;
+  //opacity : 0.8;&#13;
+ 		transition : 0.5s;&#13;
+  	transition-timing-function: ease-out;&#13;
+  &#13;
+}&#13;
+&#13;
+.tile#am{&#13;
+  &#13;
+    border-radius : 5px;&#13;
+  background: rgba(73, 39, 64,0.9);&#13;
+  //opacity : 0.8;&#13;
+ 		transition : 0.5s;&#13;
+  	transition-timing-function: ease-out;&#13;
+  &#13;
+}&#13;
+&#13;
+.tile#cl{&#13;
+  &#13;
+    border-radius : 5px;&#13;
+    background: rgba(247, 136, 47,0.8);&#13;
+ // opacity : 0.8;&#13;
+ 		transition : 0.5s;&#13;
+  	transition-timing-function: ease-out;&#13;
+  &#13;
+}&#13;
+&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dashboard-wid</id>
+        <internal>false</internal>
+        <link/>
+        <name>dashboard-wid</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-21 16:02:03</sys_created_on>
+        <sys_id>64ea5e2c6fcdd300d69dc8c17c3ee4cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>dashboard-wid</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_widget_64ea5e2c6fcdd300d69dc8c17c3ee4cd</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-21 16:02:03</sys_updated_on>
+        <template><![CDATA[<div class="row"> 
+  
+  <div class="col-md-3 part1">
+     <a href="/esm_main/?id=esm_executive_dashboard">
+    <div class="tile">
+      <br/>
+         		<center><img src="picture4.jpg"/> </center>
+        		<br/>
+      		<div>
+             <span class="one"><center>Executive Dashboard</center></span> 
+      </div>
+        
+      </div>
+       </a>
+  </div>
+  <div class="col-md-3 part1">
+    <a href="/ui_page.do?sys_id=08221174db2a7e8023a23220ad96191f" target="_blank">
+     		<div class="tile">
+        	<br/>
+         		<center><img src="picture5.jpg"/> </center>
+        		<br/>
+         			<div>
+           		<span class="one"><center>Self Service Dashboard</center></span> 
+        			</div>        
+          </div>
+      </a>
+     </div>
+  <div class="col-md-3 part1">
+    <a href="/esm_main/?id=ai1" target="_blank">
+     		<div class="tile">
+        	<br/>
+         		<center><img src="picture3.jpg"/> </center>
+        		<br/>
+         			<div>
+           		<span class="one"><center>AI Dashboard</center></span> 
+        			</div>         
+          </div>
+          </a>
+     </div>
+   <div class="col-md-3 part1">
+     		<div class="tile"><a href="/esm_main/?id=orchestration" target="_blank">
+        	<br/>
+         		<center><img src="picture6.jpg"/> </center>
+        		<br/>
+         			<div>
+           		<span class="one"><center>Orchestration Dashboard</center></span> 
+        			</div>  </a>      
+          </div>
+     </div>  
+</div>
+
+
+<div class="row"  >
+  
+  <div class="col-md-3 part1">
+     <a href="/cxo1">
+    <div class="tile">
+      <br/>
+         		<center><img src="picture6.jpg"/> </center>
+        		<br/>
+      		<div>
+             <span class="one"><center>CXO 1 </center></span> 
+      </div>
+        
+      </div>
+       </a>
+  </div>
+  <div class="col-md-3 part1">
+    <a href="/cxo2" target="_blank">
+     		<div class="tile">
+        	<br/>
+         		<center><img src="picture3.jpg"/> </center>
+        		<br/>
+         			<div>
+           		<span class="one"><center>CXO 2</center></span> 
+        			</div>        
+          </div>
+      </a>
+     </div>
+  <div class="col-md-3 part1">
+    <a href="/cxo3" target="_blank">
+     		<div class="tile">
+        	<br/>
+         		<center><img src="picture4.jpg"/> </center>
+        		<br/>
+         			<div>
+           		<span class="one"><center>CXO 3</center></span> 
+        			</div>         
+          </div>
+          </a>
+     </div>
+   <div class="col-md-3 part1">
+     		<div class="tile"><a href="/cxo4" target="_blank">
+        	<br/>
+         		<center><img src="picture5.jpg"/> </center>
+        		<br/>
+         			<div>
+           		<span class="one"><center>CXO 4</center></span> 
+        			</div>  </a>      
+          </div>
+     </div>  
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

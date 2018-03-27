@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>hopscotch.min.js</display_name>
+        <source>local</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-26 11:23:14</sys_created_on>
+        <sys_id>bb1b834e4f8d970053c240f18110c77d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>hopscotch.min.js</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_ui_script/>
+        <sys_update_name>sp_js_include_bb1b834e4f8d970053c240f18110c77d</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-26 11:23:14</sys_updated_on>
+        <url/>
+    </sp_js_include>
+</record_update>

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope){
+  /* widget controller */
+  var c = this;
+	
+	//document.body.style.backgroundImage = "url('new3.jpg')";
+	//document.body.style.backgroundSize = "cover";
+	//document.body.style.backgroundRepeat  = "no-repeat";
+	$scope.fname=$scope.user.first_name;
+	$scope.setpersona = function(){
+		//alert(c.data.persona);
+	
+	// this.style.background = "#0000ff";
+//);
+c.server.get({wparm:c.data.persona}).then(function(r){
+//document.getElementById('myModal').setAttribute("style", "display:none");
+ window.location="/esm_main/?id=ess";
+})
+}
+$scope.setbg=function(){
+	c.server.get({zparm:c.data.background}).then(function(r){
+//document.getElementById('myModal').setAttribute("style", "display:none");
+ window.location="/esm_main/?id=ess";
+	
+})}
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.dropbtn:hover{&#13;
+  cursor:pointer;&#13;
+  &#13;
+  cursor: hand;&#13;
+  border-bottom:2px solid #fff;&#13;
+  &#13;
+}&#13;
+.bgImage{&#13;
+ margin-top: 30px;&#13;
+}&#13;
+.dropbtn{&#13;
+-webkit-transition:   ease;&#13;
+  font-weight : bold;&#13;
+  font-size : 19px;&#13;
+}&#13;
+.box:hover{&#13;
+  border:2px solid #fba100;&#13;
+}&#13;
+.box{&#13;
+    background-repeat:no-repeat;&#13;
+ background-size:150px 130px;&#13;
+// background-size:cover;&#13;
+  box-shadow:3px 3px 3px #383838;&#13;
+ height:130px;&#13;
+  width:100%;&#13;
+}&#13;
+/*********************************MODAL*****************************************//&#13;
+.modal-dialog{&#13;
+// height:100%; &#13;
+  overflow-y: initial !important&#13;
+}&#13;
+&#13;
+.modal-header, , .close {&#13;
+      background : rgba(255,255,255,0.5); //#f7882f;//5cb85c;&#13;
+      color:white !important;&#13;
+      text-align: center;&#13;
+      font-size: 30px;&#13;
+  }&#13;
+.modal-body{&#13;
+  overflow-y: auto !important;&#13;
+  background: #f4f4f4;//rgba(255,255,255,0.5);&#13;
+   &#13;
+	// background-color: #675682;//f7882f;//30415d;//031424;//76C3BD;//f9f9f9;&#13;
+}&#13;
+.modal-backdrop&#13;
+{&#13;
+    opacity:0.5 !important;&#13;
+}&#13;
+.modal-body h4{&#13;
+ color:#383838;&#13;
+  text-align:center;&#13;
+  font-size:1.5em;&#13;
+  &#13;
+}&#13;
+ &#13;
+  .modal-footer {&#13;
+      background-color: #f7882f;//f9f9f9;&#13;
+  }&#13;
+&#13;
+//***************************************LOGO***************************************//&#13;
+&#13;
+#logo{&#13;
+ //position:absolute;&#13;
+ left:20;&#13;
+  top:25;&#13;
+  &#13;
+}&#13;
+&#13;
+//***************************************END OF LOG***************************************//&#13;
+&#13;
+//***************************************HEADING***************************************//&#13;
+h2 span.one, h2 span.two  {&#13;
+  position: relative;&#13;
+  display: block; &#13;
+  width: 50%;&#13;
+  margin: .25em 25%;&#13;
+  background: #b82601;// #e24e42;&#13;
+  text-align:center;&#13;
+  color:white;font-size:30px;&#13;
+    box-shadow: 5px 2px 6px black;&#13;
+  &#13;
+}&#13;
+&#13;
+ &#13;
+&#13;
+span.one:after, span.two:before {&#13;
+  content: "";&#13;
+  position: absolute;&#13;
+  bottom: 0;&#13;
+  top: 0;&#13;
+  background: #b82601;&#13;
+  width: 52%;   &#13;
+ // border:3px solid #b82601;&#13;
+}&#13;
+&#13;
+span.one:after {&#13;
+  left: 100%;&#13;
+}&#13;
+&#13;
+span.two:before {&#13;
+  right: 100%; &#13;
+}&#13;
+ &#13;
+span.one:before, span.two:after {&#13;
+  content: "";&#13;
+  position: absolute;&#13;
+  display: block;&#13;
+border: 16px solid #b82601;&#13;
+  //border-bottom:1px solid #b82601;&#13;
+  &#13;
+}&#13;
+&#13;
+span.one:before {&#13;
+  left: -1em;&#13;
+  border-right-width: 0.7em;&#13;
+  border-left-color: transparent; &#13;
+}&#13;
+&#13;
+span.two:after {&#13;
+  right: -1em;&#13;
+  top: 0;&#13;
+  border-left-width: 0.73em;&#13;
+  border-right-color:  transparent;&#13;
+  &#13;
+} &#13;
+&#13;
+//***************************************END OF HEADING***************************************//&#13;
+&#13;
+ &#13;
+//***************************************TILES***************************************//&#13;
+#features {&#13;
+    margin-top:10px;&#13;
+  padding-left : 7.2%;&#13;
+  padding-right : 7.2%;&#13;
+}&#13;
+.feature, .feature i, .feature h3, .feature .title_border {&#13;
+    -webkit-transition: all 0.5s ease-in-out;&#13;
+    -moz-transition: all 0.5s ease-in-out;&#13;
+    -o-transition: all 0.5s ease-in-out;&#13;
+    transition: all 0.5s ease-in-out;    &#13;
+}&#13;
+.feature {&#13;
+    background:#FFFFFF;&#13;
+    text-align:center;&#13;
+    padding:20px;&#13;
+  height:250px;&#13;
+  width:98%;&#13;
+    border: solid 1px #cccccc;&#13;
+  box-shadow: 0px 1px 5px black;&#13;
+&#13;
+}&#13;
+.feature p {&#13;
+ //   margin-top:20px;   &#13;
+    margin-bottom:30px;   &#13;
+}&#13;
+.feature i{&#13;
+    font-size:50px;&#13;
+    color:#FFFFFF;&#13;
+    background:#1E825F;&#13;
+    padding:10px;&#13;
+    border-radius:50%;&#13;
+    border: solid 3px #1E825F;&#13;
+}&#13;
+.feature h3 {&#13;
+    color:#1E825F;  &#13;
+}&#13;
+.feature:hover {&#13;
+    background:#F5F5F5;&#13;
+  cursor:pointer; cursor:hand;&#13;
+    -webkit-transform: translate(0,1em);&#13;
+    -moz-transform: translate(0,1em);&#13;
+    -o-transform: translate(0,1em);&#13;
+    -ms-transform: translate(0,1em);&#13;
+    transform: translate(0,1em);    &#13;
+}&#13;
+.feature:hover i{&#13;
+    color:#1E825F;&#13;
+    border-color:#1E825F;&#13;
+    background:#FFFFFF;&#13;
+}&#13;
+.feature:hover .title_border {&#13;
+    background-color:#1E825F;&#13;
+    width:50%;&#13;
+}&#13;
+.feature .title_border {&#13;
+    width: 0%;&#13;
+    height: 3px;&#13;
+    background:#1E825F;&#13;
+    margin: 0 auto;&#13;
+    margin-top: 12px;&#13;
+    margin-bottom: 8px;&#13;
+}&#13;
+&#13;
+//*****************************END OF TILES***********************************//&#13;
+&#13;
+//*****************************BOTTOM QUIZ***********************************//&#13;
+#quiz{&#13;
+color:#b82601;//e24e42;&#13;
+text-align: center;&#13;
+  font-size:25px;&#13;
+}&#13;
+//*****************************END OF BOTTOM QUIZ***********************************//&#13;
+&#13;
+//************************Change Background *************************/&#13;
+&#13;
+.blink {&#13;
+	-webkit-animation: blink 1s linear infinite;&#13;
+	-moz-animation: blink 1s linear infinite;&#13;
+	-ms-animation: blink 1s linear infinite;&#13;
+	-o-animation: blink 1s linear infinite;&#13;
+	 animation: blink 1s linear infinite;&#13;
+}&#13;
+@-webkit-keyframes blink {&#13;
+  from {&#13;
+        color:#ffffff;&#13;
+    }&#13;
+    to {&#13;
+        color:#69372b;&#13;
+    }&#13;
+	//0% { opacity: 1; }&#13;
+	//50% { opacity: 1; }&#13;
+	//50.01% { opacity: 0; }&#13;
+	//100% { opacity: 0; }&#13;
+}&#13;
+@-moz-keyframes blink {&#13;
+	from {&#13;
+        color:#ffffff;&#13;
+    }&#13;
+    to {&#13;
+        color:#1b7b5a;&#13;
+    }&#13;
+}&#13;
+@-ms-keyframes blink {&#13;
+	from {&#13;
+        color:#ffffff;&#13;
+    }&#13;
+    to {&#13;
+        color:#1b7b5a;&#13;
+    }&#13;
+}&#13;
+@-o-keyframes blink {&#13;
+	from {&#13;
+        color:#ffffff;&#13;
+    }&#13;
+    to {&#13;
+        color:#1b7b5a;&#13;
+    }&#13;
+}&#13;
+@keyframes blink {&#13;
+	from {&#13;
+        color:#ffffff;&#13;
+    }&#13;
+    to {&#13;
+        color:#1b7b5a;&#13;
+    }&#13;
+}&#13;
+&#13;
+/**********************END OF CHANGE BACKGROUND *************//</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>esm-sp-persona</id>
+        <internal>false</internal>
+        <link/>
+        <name>ESM SP Persona</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	//To iterate over u_main_portal_bg table to display the list of bg images//
+	data.backgroundImg = [];
+	var bg = new GlideRecord('u_main_portal_bg');
+	bg.query();
+	
+	while(bg.next()){
+		object ={};
+		object.src = bg.getDisplayValue('u_image');
+		object.number = bg.getDisplayValue('u_number');
+		data.backgroundImg.push(object);
+	}
+	
+if(input) //will only run when input is provided by client side. in this case "wparm"
+{
+
+var gr = new GlideRecord('sys_user');
+gr.addQuery('sys_id',gs.getUserID());
+gr.query();
+if(gr.next()){
+gr.u_persona = input.wparm;
+gr.update();
+}
+
+
+}
+	
+ if(input) //will only run when input is provided by client side. in this case "wparm"
+{
+
+var gr = new GlideRecord('sys_user');
+gr.addQuery('sys_id',gs.getUserID());
+gr.query();
+if(gr.next()){
+gr.u_persona = input.wparm;
+	//gr.u_background_main = "";
+gr.update();
+}
+	
+	
+		if(input) //will only run when input is provided by client side. in this case "wparm"
+{
+
+var grbg = new GlideRecord('sys_user');
+grbg.addQuery('sys_id',gs.getUserID());
+grbg.query();
+if(grbg.next()){
+ 
+grbg.u_background_main = input.zparm;
+  
+grbg.update();
+}
+
+
+}
+}})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 09:04:15</sys_created_on>
+        <sys_id>77f7a27f6ff49300d69dc8c17c3ee440</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESM SP Persona</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_widget_77f7a27f6ff49300d69dc8c17c3ee440</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 09:04:15</sys_updated_on>
+        <template><![CDATA[<div>
+   <a href="?id=ess"><img src="InfosysESM-Cafe-logo.png" height=45 width=350 id="logo" /></a>
+   <a href="?id=ess"style="font-size:20px; margin-right:15px;  color:white; float:right; margin-top:20px;" >  
+   <span class="glyphicon glyphicon-home"></span></a>
+   <div class="dropdown" STYLE="float:right; margin-right:100px; margin-top:20px;font-size:18px; color:white">
+      <span id="background" class="dropbtn blink"  data-toggle="modal" data-target="#myModal" >Change Background</span>
+   </div>
+   <div class="container" style="height:80% ;">
+      <div class="modal fade" id="myModal" role="dialog" style=";">
+         <div class="modal-dialog" >
+            <!-- Modal content-->
+            <div class="modal-content" >
+               <div class="modal-body" style="padding:40px 50px;">
+                  <button type="button" class="close pull-right" data-dismiss="modal">&times;</button>
+                  <h4><span class=""></span> Select a Background</h4>
+                  <br/>
+                  <div class="row">
+                     <div class="col-md-4 bgImage" ng-repeat="bg in data.backgroundImg">
+                        <div class="box" id="{{bg.number}}" ng-click="c.data.background=bg.number ;setbg()">
+                           <img src="{{bg.src}}" height=100% width = 100%>
+                        </div>
+                     </div>
+                     <!--<div class="col-md-4">
+                        <div class="box" id=" box2" ng-click="c.data.background= 'box2';setbg()">
+                        <img src="scroll3.jpg" height=100% width = 100%>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="box"id=" box3" ng-click="c.data.background= 'box3';setbg()">
+                        <img src="scroll4.jpg" height=100% width = 100%>
+                        </div></div> -->
+                  </div>
+                  <!-- <div class="row">
+                     <div class="col-md-4">
+                        <div class="box"id=" box4" ng-click="c.data.background= 'box4';setbg()">
+                      <img src="store5.jpg" height=100% width = 100%>
+                     </div>
+                     </div>
+                      <div class="col-md-4">
+                        <div class="box"id=" box5" ng-click="c.data.background= 'box5';setbg()">
+                      <img src="store6.jpg" height=100% width = 100%>
+                     </div>
+                     </div>
+                      <div class="col-md-4">
+                        <div class="box"id="  box6" ng-click="c.data.background= 'box6';setbg()">
+                      <img src="store7.jpg" height=100% width = 100%>
+                     </div>
+                         
+                            
+                        </div> 
+                          </div>
+                             <div class="row">
+                     <div class="col-md-4">
+                        <div class="box" id=" box7" ng-click="c.data.background= 'box7';setbg()">
+                      <img src="store8.jpg" height=100% width = 100%>
+                     </div>
+                     </div>
+                      <div class="col-md-4">
+                        <div class="box" id=" box8" ng-click="c.data.background= 'box8';setbg()">
+                      <img src="store9.jpg" height=100% width = 100%>
+                     </div>
+                     </div>
+                      <div class="col-md-4">
+                        <div class="box"id=" box9" ng-click="c.data.background= 'box9';setbg()">
+                      <img src="store10.jpg" height=100% width = 100%>
+                        </div></div> 
+                          </div>
+                          <div class="row">
+                     <div class="col-md-4">
+                        <div class="box" id=" box10" ng-click="c.data.background= 'box10';setbg()">
+                      <img src="store11.jpg" height=100% width = 100%>
+                     </div>
+                     </div>
+                      <div class="col-md-4">
+                        <div class="box" id=" box11" ng-click="c.data.background= 'box11';setbg()">
+                      <img src="store12.jpg" height=100% width = 100%>
+                     </div>
+                     </div>
+                      <div class="col-md-4">
+                        <div class="box"id=" box12" ng-click="c.data.background= 'box12';setbg()">
+                      <img src="store13.jpg" height=100% width = 100%>
+                        </div></div> 
+                          </div>-->
+                  <br><br><br>
+               </div>
+               <button    class="btn btn-success center" ng-click="c.data.background= '';setbg()" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Remove Personalized Background</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <h2><span class="one">Hi, {{fname}}</span> <span class="two">Choose your Profile</span></h2>
+</div>
+<h3 style="color:white; font-size:30px;text-align:center; margin-top:15px; padding-top:0px; text-transform:none;">Select a profile which suits best with your work</h3>
+<br>
+<div class="container" id="features">
+<div class="row">
+   <div class="col-md-4 ">
+      <div id="ts" class="feature" ng-click="c.data.persona= 'ts'; setpersona()" >
+         <i class="glyphicon glyphicon-picture"></i>
+         <h3>Tech Savvy</h3>
+         <div class="title_border"></div>
+         <p>Technical Inclined, proficient in use of modern technology <br></p>
+      </div>
+   </div>
+   <div class="col-md-4 ">
+      <div class="feature" ng-click="c.data.persona= 'bu'; setpersona()">
+         <i class="glyphicon glyphicon-globe"></i>
+         <h3>Business User</h3>
+         <div class="title_border"></div>
+         <p>Do you use the system to report issues & requests, read knowledge articles, manage your Assets, Reports </p>
+      </div>
+   </div>
+   <div class="col-md-4  ">
+      <div class="feature" ng-click="c.data.persona= 'ex'; setpersona()">
+         <i class="glyphicon glyphicon-briefcase"></i>
+         <h3>Executive</h3>
+         <div class="title_border"></div>
+         <p>Need big picture of IT, Operations and other Business processes. </p>
+      </div>
+   </div>
+</div>
+<br><br>
+<div class="row">
+   <div class="col-md-4 col-md-offset-2  ">
+      <div class="feature" ng-click="c.data.persona= 'am'; setpersona()">
+         <i class="glyphicon glyphicon-plane"></i>
+         <h3>Remote User</h3>
+         <div class="title_border"></div>
+         <p>Does your work require you to work remote or travel frequently </p>
+      </div>
+   </div>
+   <div class="col-md-4  ">
+      <div class="feature" ng-click="c.data.persona= 'cl'; setpersona()">
+         <i class="glyphicon glyphicon-link"></i>
+         <h3>Power User</h3>
+         <div class="title_border"></div>
+         <p>Like to collaborate, share your experience and expertise with colleagues</p>
+      </div>
+   </div>
+</div>
+<br><br>]]></template>
+    </sp_widget>
+</record_update>

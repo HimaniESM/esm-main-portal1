@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_application">
+    <sys_ui_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <hint/>
+        <name>ESM Main Portal Persona Table</name>
+        <order/>
+        <roles>x_infte_esm_servic.esm_main_portal_persona_table_user</roles>
+        <sys_class_name>sys_ui_application</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 08:26:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b99f52f76ff49300d69dc8c17c3ee422</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESM Main Portal Persona Table</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_ui_application_b99f52f76ff49300d69dc8c17c3ee422</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 08:26:34</sys_updated_on>
+    </sys_ui_application>
+</record_update>

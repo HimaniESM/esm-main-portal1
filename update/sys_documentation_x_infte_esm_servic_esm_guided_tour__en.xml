@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="" label="ESM Guided Tour" language="en" table="x_infte_esm_servic_esm_guided_tour">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>ESM Guided Tour</label>
+            <language>en</language>
+            <name>x_infte_esm_servic_esm_guided_tour</name>
+            <plural>ESM Guided Tours</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>Divya_M</sys_created_by>
+            <sys_created_on>2018-03-26 10:46:53</sys_created_on>
+            <sys_id>e9d287c64f8d970053c240f18110c70e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>ESM Guided Tour</sys_name>
+            <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+            <sys_update_name>sys_documentation_x_infte_esm_servic_esm_guided_tour__en</sys_update_name>
+            <sys_updated_by>Divya_M</sys_updated_by>
+            <sys_updated_on>2018-03-26 10:46:53</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

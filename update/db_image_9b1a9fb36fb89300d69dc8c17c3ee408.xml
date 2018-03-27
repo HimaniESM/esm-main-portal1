@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="db_image">
+    <db_image action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category/>
+        <format>png</format>
+        <height>60</height>
+        <image/>
+        <name>findAns.png</name>
+        <size_bytes>2755</size_bytes>
+        <sys_class_name>db_image</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 12:42:58</sys_created_on>
+        <sys_id>9b1a9fb36fb89300d69dc8c17c3ee408</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>findAns.png</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>db_image_9b1a9fb36fb89300d69dc8c17c3ee408</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 12:43:05</sys_updated_on>
+        <thumbnail/>
+        <width>60</width>
+    </db_image>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color>#ffffff</average_image_color>
+        <chunk_size_bytes>734003</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>image</file_name>
+        <image_height>60</image_height>
+        <image_width>60</image_width>
+        <size_bytes>2755</size_bytes>
+        <size_compressed>2487</size_compressed>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 12:43:05</sys_created_on>
+        <sys_id>df4a5fb36fb89300d69dc8c17c3ee4ab</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 12:43:05</sys_updated_on>
+        <table_name>ZZ_YYdb_image</table_name>
+        <table_sys_id>9b1a9fb36fb89300d69dc8c17c3ee408</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="image" sys_id="df4a5fb36fb89300d69dc8c17c3ee4ab">df4a5fb36fb89300d69dc8c17c3ee4ab</sys_attachment>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 12:43:05</sys_created_on>
+        <sys_id>134a5fb36fb89300d69dc8c17c3ee4ac</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>3304</length>
+        <position>1</position>
+        <sys_attachment display_value="image" sys_id="df4a5fb36fb89300d69dc8c17c3ee4ab">df4a5fb36fb89300d69dc8c17c3ee4ab</sys_attachment>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 12:43:05</sys_created_on>
+        <sys_id>934a5fb36fb89300d69dc8c17c3ee4ac</sys_id>
+    </sys_attachment_doc>
+</record_update>

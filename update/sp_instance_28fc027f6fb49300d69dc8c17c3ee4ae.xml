@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color/>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size/>
+        <sp_column display_value="2">d4ec0e7f6fb49300d69dc8c17c3ee413</sp_column>
+        <sp_widget display_value="ESM Main Home Search">4c360e3b6fb49300d69dc8c17c3ee449</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 07:05:07</sys_created_on>
+        <sys_id>28fc027f6fb49300d69dc8c17c3ee4ae</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>How an we help you?</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_instance_28fc027f6fb49300d69dc8c17c3ee4ae</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-27 04:44:00</sys_updated_on>
+        <title>How an we help you?</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"title": {
+		"value": "How an we help you?",
+		"displayValue": "How an we help you?"
+	},
+	"color": {
+		"value": "",
+		"displayValue": ""
+	},
+	"glyph": {
+		"value": "",
+		"displayValue": ""
+	},
+	"size": {
+		"value": "",
+		"displayValue": ""
+	},
+	"limit": {
+		"value": null,
+		"displayValue": ""
+	},
+	"contextual_search_sources": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=28fc027f6fb49300d69dc8c17c3ee4ae"/>
+</record_update>

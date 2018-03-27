@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope,$window,$rootScope) {
+  /* widget controller */
+  var c = this;
+	
+	$scope.myFunction = function(){		
+		 $rootScope.$broadcast('feedback', {});
+	} 
+	
+  $scope.openChat=function(){
+		
+		$window.open('/$chat_support.do?queueID=4bc7a3f3c31331001c845cb981d3ae44', 'window', 'location=no,toolbar=no,menubar=yes,scrollbars=no,width=400,height=360');
+		
+	} 
+	
+	$scope.openPopUp = function() {
+		var url = "$chat_support.do?queueID=" + $scope.data.connect_support_queue_id;
+		var popup = window.open (url, "popup", "width=400, height=400,top=250, left=800"); 
+	};
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.container {&#13;
+    //padding-right: 15px;&#13;
+   // padding-left: 15px;&#13;
+    margin-right: auto;&#13;
+    margin-left: auto;&#13;
+ &#13;
+  &#13;
+}&#13;
+&#13;
+.main-footer {&#13;
+    background: rgba(0,0,0,0.7);//#040405;&#13;
+    //background: -webkit-linear-gradient(to left, #314755 , #26a0da);&#13;
+   // background: linear-gradient(to left, #5F0034 , #A52D7A);&#13;
+    color: #fff;&#13;
+    margin: 0 auto;&#13;
+  	max-width: 100%;&#13;
+    padding-left: 8.5%;&#13;
+  height : 30px;&#13;
+&#13;
+}&#13;
+.row {&#13;
+  width:100%;&#13;
+p{&#13;
+ margin-left:5px ;&#13;
+  padding-left:5px;&#13;
+  text-align:center;&#13;
+}&#13;
+  &#13;
+ img :hover{&#13;
+ }&#13;
+  &#13;
+  &#13;
+ </css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>esm_sp_es_footer</id>
+        <internal>false</internal>
+        <link/>
+        <name>ESM_SP_ESS_Footer</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.pageid=$sp.getParameter('id');
+	data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 06:11:55</sys_created_on>
+        <sys_id>d2804e7f4ff4930053c240f18110c789</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>ESM_SP_ESS_Footer</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_header_footer_d2804e7f4ff4930053c240f18110c789</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 06:26:57</sys_updated_on>
+        <template><![CDATA[<div ng-hide="data.pageid == 'main'">
+    <div class=" main-footer">
+
+        <div class="row">
+            <div style="color:#fff;">
+                <p>Looking for some help? Call us +1 (111) 111-1111 &nbsp;&nbsp;
+                    <a style="color:white;" href="#" ng-click="openPopUp()">
+                        <img width="30" src="livechat.png" height="30" title="Chat">
+                    </a>&nbsp;&nbsp;
+                    <a style="color:white;" href="?id=community">
+                        <img width="30" src="community.jpg" height="30" title="Community Help">
+                  </a>&nbsp;&nbsp;
+                        <img width="30" src="feeback.jpg" height="30" title="Feedback" ng-click="myFunction()" ng-show="data.pageid=='ess' || data.pageid==null">
+                 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_header_footer>
+</record_update>

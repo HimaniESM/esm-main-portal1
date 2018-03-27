@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope) {
+  /* widget controller */
+  var c = this;
+		
+	$scope.func = function(id){
+		
+		$scope.appName="#"+id;
+		
+	}
+	
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.main{&#13;
+  background : #eee;&#13;
+  padding-left: 2%;&#13;
+  color : #000000;&#13;
+  border-radius : 5px;&#13;
+ 	padding-top : 1%&#13;
+  padding-bottom : 1%;&#13;
+}&#13;
+&#13;
+.asset{&#13;
+  padding-left: 2%;&#13;
+  color : #0274c7;&#13;
+  font-family : calibri;&#13;
+  font-weight : bold;&#13;
+  font-size : 26px;&#13;
+  padding-top: 1%;&#13;
+  padding-bottom: 1%;&#13;
+}&#13;
+.item{&#13;
+  background : #eee;&#13;
+  padding-left: 2%;&#13;
+  font-family : calibri;&#13;
+  font-weight : bold;&#13;
+  color : #676161;&#13;
+  font-size : 15px;&#13;
+  border-bottom-left-radius: 5px;&#13;
+  border-bottom-right-radius: 5px;&#13;
+  padding-bottom: 1%;&#13;
+}&#13;
+&#13;
+.row{&#13;
+  padding-bottom : 2%;&#13;
+}&#13;
+&#13;
+.notFound{&#13;
+  background : #eee;&#13;
+  font-family : calibri;&#13;
+  font-weight : bold;&#13;
+  color : #0274c7;&#13;
+  font-size : 20px;&#13;
+  border-radius: 5px;&#13;
+  padding-bottom: 1%;&#13;
+  padding-top: 1%;&#13;
+  padding-left: 2%;&#13;
+ &#13;
+}&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>my-asset</id>
+        <internal>false</internal>
+        <link/>
+        <name>ESM SP My Assets</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	data.assets = [];
+	
+	//data.user = gs.getUserID();
+	var user = gs.getUserID();
+	var gr = new GlideRecord('alm_asset') ;
+	gr.addQuery('assigned_to',user);
+	
+	gr.query();
+	
+	while(gr.next()){
+		object = {};
+		
+		object.name = gr.getDisplayValue('model');
+		object.modelCategory = gr.getDisplayValue('model_category');
+		object.model = gr.getDisplayValue('model');
+		object.serialNo = gr.getDisplayValue('serial_number');
+		object.assetTag = gr.getDisplayValue('asset_tag');
+		object.id = gr.getValue('sys_id');
+		//object.user = gr.getDisplayValue()
+		data.assets.push(object);
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-19 13:49:38</sys_created_on>
+        <sys_id>6c59af7f6fb89300d69dc8c17c3ee487</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESM SP My Assets</sys_name>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sp_widget_6c59af7f6fb89300d69dc8c17c3ee487</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-19 13:49:38</sys_updated_on>
+        <template><![CDATA[<br/>
+<div> 
+<div class="row" ng-repeat="value in data.assets"> 
+  <div data-toggle="collapse" ng-click="func(value.id)" data-target={{appName}} class="main">
+  <div class="asset">
+    
+    <b>{{value.modelCategory}} &nbsp; : &nbsp;{{value.name}} </b> 
+  
+  </div>
+  <div id={{value.id}} class="collapse item">
+           <table>
+             <tr>
+               <td> Model Category &nbsp;</td>
+                 
+               <td class="col2" >{{value.modelCategory}} </td>
+            </tr>
+              <tr>
+               <td> Model  &nbsp;</td>
+                 
+               <td class="col2" > {{value.model}} </td>
+            </tr>
+              <tr>
+               <td> Asset Tag &nbsp;</td>
+                 
+               <td class="col2"> {{value.assetTag}} </td>
+            </tr>
+             <tr>
+               <td>Serial Number &nbsp;</td>
+                 
+               <td class="col2"> {{value.serialNo}} </td>
+            </tr>
+              
+    </table>   
+    
+   </div> 
+</div> 
+  
+</div>
+  <div ng-if="data.assets.length==0" class="notFound">
+   
+    No Assets found 
+  </div>  
+</div>
+]]></template>
+    </sp_widget>
+</record_update>

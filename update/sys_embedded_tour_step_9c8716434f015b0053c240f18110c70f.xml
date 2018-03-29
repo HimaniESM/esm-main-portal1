@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_embedded_tour_step">
+    <sys_embedded_tour_step action="INSERT_OR_UPDATE">
+        <action>false</action>
+        <action_event>next</action_event>
+        <action_target/>
+        <action_target_ref display_value="label.x_infte_esm_servic_esm_guided_tour">5087d6434f015b0053c240f18110c796</action_target_ref>
+        <active>true</active>
+        <content><![CDATA[Please enter the id of the html element for which you wish to add the callout]]></content>
+        <guide display_value="Service Portal Guided Tour Overview">85049acf4fcd1b0053c240f18110c7a3</guide>
+        <implicit>false</implicit>
+        <link/>
+        <name>Step 11</name>
+        <options/>
+        <order>11</order>
+        <placement>right</placement>
+        <sys_class_name>sys_embedded_tour_step</sys_class_name>
+        <sys_created_by>Divya_M</sys_created_by>
+        <sys_created_on>2018-03-29 10:11:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>9c8716434f015b0053c240f18110c70f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Step 11</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
+        <sys_update_name>sys_embedded_tour_step_9c8716434f015b0053c240f18110c70f</sys_update_name>
+        <sys_updated_by>Divya_M</sys_updated_by>
+        <sys_updated_on>2018-03-29 10:11:30</sys_updated_on>
+        <target/>
+        <target_ref display_value="label.x_infte_esm_servic_esm_guided_tour">5087d6434f015b0053c240f18110c796</target_ref>
+        <ui_version>dynamic</ui_version>
+        <view/>
+        <window>x_infte_esm_servic_esm_guided_tour.do</window>
+    </sys_embedded_tour_step>
+    <sys_translated_text action="delete_multiple" query="documentkey=9c8716434f015b0053c240f18110c70f"/>
+</record_update>

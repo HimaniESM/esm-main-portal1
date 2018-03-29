@@ -846,14 +846,14 @@ data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
         <sys_created_by>Divya_M</sys_created_by>
         <sys_created_on>2018-03-19 06:49:36</sys_created_on>
         <sys_id>d9294abb6fb49300d69dc8c17c3ee4c4</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>ESM Need Help Widget</sys_name>
         <sys_package display_value="ESM_Service_Portal" source="x_infte_esm_servic">846bb5f74ff4930053c240f18110c767</sys_package>
         <sys_policy/>
         <sys_scope display_value="ESM_Service_Portal">846bb5f74ff4930053c240f18110c767</sys_scope>
         <sys_update_name>sp_widget_d9294abb6fb49300d69dc8c17c3ee4c4</sys_update_name>
         <sys_updated_by>Divya_M</sys_updated_by>
-        <sys_updated_on>2018-03-19 09:18:16</sys_updated_on>
+        <sys_updated_on>2018-03-28 05:09:22</sys_updated_on>
         <template><![CDATA[ 
 <div class=" home-content">
   
@@ -868,21 +868,21 @@ data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
          </a>
          <div class="column-content">
             <ul>
-               <li><a target="" href="?id=sc_cat_item&sys_id={{::options.logAnIssue}}" ng-attr-id={{persona}}>
+               <li id="log-an-issue"><a target="" href="?id=sc_cat_item&sys_id={{::options.logAnIssue}}" ng-attr-id={{persona}}>
                   Log an Issue</a>
                </li>
-               <li><a href="javascript:void(0)" ng-click="openPopUp();" ng-attr-id={{persona}} title="Average wait time : {{data.chat_avg_time}}">
+               <li id="live-chat"><a href="javascript:void(0)" ng-click="openPopUp();" ng-attr-id={{persona}} title="Average wait time : {{data.chat_avg_time}}">
                   Live Chat</a>
                </li>
                <li><a target="" href="?id=incident_history&table=incident&filter=caller_id%3Djavascript:gs.getUserID()" ng-attr-id={{persona}}> 
                   Incident History</a>
                </li>
-              <li><a target="" href="?id=community" ng-attr-id={{persona}}> 
+              <li id="community"><a target="" href="?id=community" ng-attr-id={{persona}}> 
                   Community Help</a>
                </li>
-              <li><a target="" href="?id=community" ng-attr-id={{persona}}> 
+              <!--<li><a target="" href="?id=community" ng-attr-id={{persona}}> 
                   Popular Questions</a>
-               </li>
+               </li>-->
             </ul>
          </div>
       </div>

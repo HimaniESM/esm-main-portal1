@@ -5,10 +5,10 @@
         <element label="Order" mandatory="true" max_length="50" name="u_order" type="integer"/>
         <element choice="1" label="Placement" mandatory="true" max_length="40" name="u_placement" type="choice">
             <choice>
-                <element label="Top" sequence="100" value="top"/>
-                <element label="Bottom" sequence="200" value="bottom"/>
-                <element label="Right" sequence="300" value="right"/>
-                <element label="Left" sequence="400" value="left"/>
+                <element label="top" sequence="100" value="top"/>
+                <element label="bottom" sequence="200" value="bottom"/>
+                <element label="right" sequence="300" value="right"/>
+                <element label="left" sequence="400" value="left"/>
             </choice>
         </element>
         <element label="Target" mandatory="true" max_length="50" name="u_target" type="string"/>

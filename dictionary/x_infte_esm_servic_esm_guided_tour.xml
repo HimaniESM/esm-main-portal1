@@ -3,7 +3,14 @@
     <element label="ESM Guided Tour" max_length="40" name="x_infte_esm_servic_esm_guided_tour" type="collection">
         <element label="Content" mandatory="true" max_length="500" name="u_content" type="string"/>
         <element label="Order" mandatory="true" max_length="50" name="u_order" type="integer"/>
-        <element label="Placement" mandatory="true" max_length="40" name="u_placement" type="string"/>
+        <element choice="1" label="Placement" mandatory="true" max_length="40" name="u_placement" type="choice">
+            <choice>
+                <element label="Top" sequence="100" value="top"/>
+                <element label="Bottom" sequence="200" value="bottom"/>
+                <element label="Right" sequence="300" value="right"/>
+                <element label="Left" sequence="400" value="left"/>
+            </choice>
+        </element>
         <element label="Target" mandatory="true" max_length="50" name="u_target" type="string"/>
         <element label="Title" mandatory="true" max_length="40" name="u_title" type="string"/>
     </element>
